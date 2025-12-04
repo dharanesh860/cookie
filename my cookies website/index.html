@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stand-Up Cookie | Premium Comedy-Inspired Cookies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="logo">Timy Mini cookies house 🍪</a>
+            <div class="nav-links">
+                <a href="#products">The Cookie Cast</a>
+                <a href="#story">Our Story</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#contact">Contact</a>
+                <a href="#cart" class="cart-badge">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>One bite will leave you wanting more</h1>
+            <p>delicious hand made cookies</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="scrollToProducts()">
+                    <i class="fas fa-shopping-bag"></i> Shop Now
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToStory()">
+                    <i class="fas fa-cookie"></i> Meet the Cookies
+                </button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <h2 class="section-title">The Cookie Cast</h2>
+        <p class="section-subtitle">Our star performers that will make your taste buds laugh</p>
+        
+        <!-- Cookies Category -->
+        <div class="product-category">
+            <h3 class="category-title">Cookies</h3>
+            <div class="category-preview">
+                <div class="category-image">
+                    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Cookies">
+                </div>
+                <div class="category-info">
+                    <h4>Premium Cookies</h4>
+                    <p>Discover our collection of handcrafted cookies, each with its own unique personality and flavor profile.</p>
+                    <a href="cookies.html" class="btn btn-primary">View Products</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brownies Category -->
+        <div class="product-category">
+            <h3 class="category-title">Brownies</h3>
+            <div class="category-preview">
+                <div class="category-image">
+                    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Brownies">
+                </div>
+                <div class="category-info">
+                    <h4>Decadent Brownies</h4>
+                    <p>Rich, fudgy brownies that will make your taste buds dance with joy.</p>
+                    <a href="brownies.html" class="btn btn-primary">View Products</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flavored Popcorn Category -->
+        <div class="product-category">
+            <h3 class="category-title">Flavored Popcorn</h3>
+            <div class="category-preview">
+                <div class="category-image">
+                    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Flavored Popcorn">
+                </div>
+                <div class="category-info">
+                    <h4>Gourmet Popcorn</h4>
+                    <p>Crunchy, flavorful popcorn with unique combinations that will surprise and delight.</p>
+                    <a href="popcorn.html" class="btn btn-primary">View Products</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ice Cupcakes Category -->
+        <div class="product-category">
+            <h3 class="category-title">Ice Cupcakes</h3>
+            <div class="category-preview">
+                <div class="category-image">
+                    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Ice Cupcakes">
+                </div>
+                <div class="category-info">
+                    <h4>Frozen Delights</h4>
+                    <p>Cool, creamy cupcakes that are perfect for any occasion.</p>
+                    <a href="ice-cupcakes.html" class="btn btn-primary">View Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="story">
+        <div class="story-container">
+            <div class="story-header">
+                <h2 class="section-title">Our Story</h2>
+                <p class="section-subtitle">From comedy clubs to cookie jars</p>
+            </div>
+            <div class="story-grid">
+                <div class="story-content">
+                    <div class="story-text">
+                        <h3>The Beginning</h3>
+                        <p>Founded by two comedians who shared a passion for baking, Stand-Up Cookie was born from the idea that life is too short for boring cookies. Our journey began in a small kitchen, where laughter and flour filled the air.</p>
+                    </div>
+                    <div class="story-text">
+                        <h3>Our Mission</h3>
+                        <p>We believe that every cookie should bring joy and laughter to your day. Our mission is to create premium cookies that not only taste amazing but also bring a smile to your face with every bite.</p>
+                    </div>
+                    <div class="story-text">
+                        <h3>The Process</h3>
+                        <p>Each cookie is crafted with premium ingredients and a dash of humor, making every treat a memorable experience. From our classic Chocolate Chip Comedian to the unpredictable Oatmeal Improv, we guarantee a performance that will leave you wanting an encore!</p>
+                    </div>
+                </div>
+                <div class="story-images">
+                    <div class="story-image main">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Our Story">
+                        <div class="image-overlay">
+                            <span>Est. 2024</span>
+                        </div>
+                    </div>
+                    <div class="story-image-grid">
+                        <div class="story-image">
+                            <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Baking Process">
+                        </div>
+                        <div class="story-image">
+                            <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Cookie Making">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="story-stats">
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Happy Customers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Cookie Varieties</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Cities Served</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="testimonials-container">
+            <h2 class="section-title">What Our Cookie Lovers Say</h2>
+            <p class="section-subtitle">Real reviews from real cookie enthusiasts</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="testimonial-date">March 15, 2024</span>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"These cookies are so good, they should be illegal! I can't stop laughing... or eating! The Chocolate Chip Comedian is my absolute favorite - it's like a party in my mouth!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Cookie Monster">
+                        <div class="author-info">
+                            <h4>Cookie Monster</h4>
+                            <span class="author-title">Cookie Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="testimonial-date">March 12, 2024</span>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"I laughed, I cried, I ate the whole box! These cookies are the real deal! The Peanut Butter Punchline is absolutely hilarious - in a delicious way, of course!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Sweet Tooth Sally">
+                        <div class="author-info">
+                            <h4>Sweet Tooth Sally</h4>
+                            <span class="author-title">Food Blogger</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="testimonial-date">March 10, 2024</span>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"The best cookies I've ever tasted, no joke! These are definitely worth the hype! The Oatmeal Improv keeps me guessing with every bite - in the best way possible!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Baker Bob">
+                        <div class="author-info">
+                            <h4>Baker Bob</h4>
+                            <span class="author-title">Professional Baker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-cta">
+                <p>Join our happy cookie lovers!</p>
+                <button class="btn btn-primary" onclick="scrollToProducts()">
+                    <i class="fas fa-shopping-bag"></i> Try Our Cookies
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2>Stay in the Loop!</h2>
+            <p>Subscribe to our newsletter for exclusive deals and cookie jokes</p>
+            <form class="newsletter-form">
+                <div class="form-group">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Subscribe
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h2 class="footer-logo">Stand-Up Cookie</h2>
+                    <p>Where Every Bite Delivers a Punchline</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Pinterest">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Shop</h3>
+                        <ul>
+                            <li><a href="#products">All Cookies</a></li>
+                            <li><a href="#products">Best Sellers</a></li>
+                            <li><a href="#products">New Arrivals</a></li>
+                            <li><a href="#products">Gift Boxes</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#story">Our Story</a></li>
+                            <li><a href="#testimonials">Reviews</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">Shipping Info</a></li>
+                            <li><a href="#">Returns & Exchanges</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Track Order</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                            <li><a href="#">Accessibility</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <div class="newsletter-content">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for exclusive deals and cookie jokes</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Subscribe
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Stand-Up Cookie. All rights reserved.</p>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

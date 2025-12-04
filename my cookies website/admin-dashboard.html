@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Timy Mini Cookies 🍪</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff6ee;
+      margin: 0;
+    }
+    header {
+      background: #2e61f9;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .admin-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card i {
+      font-size: 30px;
+      color: #f93edd;
+      margin-bottom: 10px;
+    }
+    .card h3 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #2e61f9;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍪 Admin Dashboard - Timy Mini Cookie House</h1>
+    <p>Manage your products, users and store efficiently</p>
+  </header>
+
+  <div class="admin-container">
+    <div class="grid">
+
+      <div class="card">
+        <i class="fas fa-plus-circle"></i>
+        <h3>Add Product</h3>
+        <a href="add-product.html">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-edit"></i>
+        <h3>Update Product</h3>
+        <a href="update-product.html">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-trash"></i>
+        <h3>Remove Product</h3>
+        <a href="delete-product.html">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-list"></i>
+        <h3>View All Products</h3>
+        <a href="view-products.html">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Sales & Revenue</h3>
+        <a href="sales-dashboard.html">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-users"></i>
+        <h3>User Management</h3>
+        <a href="users.html">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-cookie-bite"></i>
+        <h3>Cookie Category Management</h3>
+        <a href="manage-cookies.html">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-cogs"></i>
+        <h3>Settings</h3>
+        <a href="settings.html">Go</a>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-lock"></i>
+        <h3>Logout</h3>
+        <a href="Admin-Login.html">Logout</a>
+      </div>
+
+    </div>
+  </div>
+
+  
+</body>
+</html>

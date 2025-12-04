@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+  <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+    <h2 class="text-2xl font-semibold mb-6 text-center">Admin Login</h2>
+    <form id="adminLoginForm" class="space-y-4">
+      <div>
+        <label class="block text-gray-700">Email</label>
+        <input type="email" id="adminEmail" class="w-full p-2 border border-gray-300 rounded" required />
+      </div>
+      <div>
+        <label class="block text-gray-700">Password</label>
+        <input type="password" id="adminPassword" class="w-full p-2 border border-gray-300 rounded" required />
+      </div>
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Login</button>
+      <p id="loginError" class="text-red-500 text-sm mt-2 hidden">Invalid email or password</p>
+    </form>
+  </div>
+
+  <script>
+    const adminLoginForm = document.getElementById("adminLoginForm");
+    const emailInput = document.getElementById("adminEmail");
+    const passwordInput = document.getElementById("adminPassword");
+    const errorDisplay = document.getElementById("loginError");
+
+    // Dummy admin credentials (for frontend only)
+    const ADMIN_CREDENTIALS = {
+      email: "admin@cookiehouse.com",
+      password: "admin123"
+    };
+
+    adminLoginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (
+        emailInput.value === ADMIN_CREDENTIALS.email &&
+        passwordInput.value === ADMIN_CREDENTIALS.password
+      ) {
+        localStorage.setItem("isAdminLoggedIn", "true");
+        window.location.href = "admin-dashboard.html";
+      } else {
+        errorDisplay.classList.remove("hidden");
+      }
+    });
+  </script>
+</body>
+</html>

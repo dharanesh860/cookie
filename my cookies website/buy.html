@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buy Now - Cookie Delight</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    
+    body { font-family: 'Poppins', sans-serif; background: #fff; padding: 20px; }
+    .container { max-width: 1000px; margin: auto; background: #f9f9f9; padding: 30px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .product-header h1 { font-size: 24px; margin-bottom: 10px; }
+    .price-block { display: flex; gap: 15px; align-items: center; }
+    .price-block .original { text-decoration: line-through; color: #999; }
+    .price-block .discounted { color: #e53935; font-weight: bold; font-size: 20px; }
+    .price-block .offer { color: green; }
+    .rating { color: #ffb400; margin-top: 5px; }
+    .section { margin: 30px 0; }
+    input[type="text"], input[type="email"], input[type="number"], select { width: 100%; padding: 10px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc; }
+    label { font-weight: 500; margin-top: 10px; display: block; }
+    .quantity-selector { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+    .quantity-selector button { padding: 5px 10px; font-size: 16px; }
+    .order-summary { background: #fff; border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+    .summary-item { display: flex; justify-content: space-between; margin-bottom: 10px; }
+    .btn-order { background: #2e61f9; color: white; padding: 15px; border: none; width: 100%; border-radius: 8px; font-size: 16px; margin-top: 20px; cursor: pointer; }
+    .secure-note { font-size: 14px; color: #555; margin-top: 10px; text-align: center; }
+    .lock-icon { color: green; margin-right: 5px; }
+    .signin-warning { background: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 15px; border-radius: 8px; margin-top: 20px; display: none; }
+    .signin-warning button { margin-top: 10px; background: #2e61f9; color: white; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="product-header">
+      <h1>Choco Chip Cookies - 200g</h1>
+      <p>Brand: <strong>Cookie Delight</strong></p>
+      <div class="price-block">
+        <span class="original">₹199</span>
+        <span class="discounted">₹179</span>
+        <span class="offer">(10% off)</span>
+      </div>
+      <div class="rating">⭐ 4.5 out of 5 (2,356 reviews)</div>
+      <small>Inclusive of all taxes</small>
+    </div>
+
+    <div class="section">
+      <p><strong>Pickup Location:</strong> Please collect your order from our Cookie Delight Store at MG Road, Bengaluru.</p>
+    </div>
+
+    <div class="section">
+      <h3>Customer Details</h3>
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter full name" />
+      <label>Mobile Number</label>
+      <input type="text" placeholder="Enter mobile number" />
+      <label>Email ID</label>
+      <input type="email" placeholder="Enter email" />
+    </div>
+
+    <div class="section">
+      <h3>Shipping Address</h3>
+      <label>Address Line 1</label>
+      <input type="text" />
+      <label>Address Line 2</label>
+      <input type="text" />
+      <label>City</label>
+      <input type="text" />
+      <label>State</label>
+      <input type="text" />
+      <label>Pincode</label>
+      <input type="text" />
+      <label><input type="checkbox" /> Save as default address</label>
+    </div>
+
+    <div class="section">
+      <h3>Payment Method</h3>
+      <label><input type="radio" name="payment" /> UPI</label><br>
+      
+      
+      <label><input type="radio" name="payment" /> Cash on Pickup</label><br>
+     
+      <p><i class="fas fa-lock lock-icon"></i>100% secure payments. No hidden charges.</p>
+    </div>
+    
+
+      <div id="cart-summary" class="section order-summary">
+        <h3>Your Order</h3>
+        <div id="cart-items"></div>
+        <div class="summary-item">
+        <strong>Total:</strong> ₹<span id="total-price">0.00</span>
+        </div>
+      </div>
+    <button class="btn-order" onclick="checkSignIn()">Place Order</button>
+    <div class="signin-warning" id="signinWarning">
+      <strong>⚠ Sign in required to complete your purchase.</strong>
+      <p>Please sign in or create an account to proceed to checkout.</p>
+      <button onclick="window.location.href='login.html'">Sign In / Sign Up</button>
+    </div>
+    <p class="secure-note"><i class="fas fa-lock lock-icon"></i>Safe and secure payments. Authentic product guarantee.</p>
+  </div>
+
+  <script>
+
+    function changeQty(change) {
+      const qtyInput = document.getElementById('qty');
+      let qty = parseInt(qtyInput.value);
+      qty = Math.min(10, Math.max(1, qty + change));
+      qtyInput.value = qty;
+    }
+
+     function checkSignIn() {
+      const isSignedIn = JSON.parse(localStorage.getItem('isSignedIn')) || false;
+      if (!isSignedIn) {
+        document.getElementById('signinWarning').style.display = 'block';
+      } else {
+        alert('Proceeding to order placement...');
+      }
+    }
+
+
+    // Redirect logic for Buy Now from cart
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const fromCart = urlParams.get('fromCart');
+      if (fromCart === 'true') {
+        checkSignIn();
+      }
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const productData = JSON.parse(localStorage.getItem("productData")) || []; // optional backup
+    const productMap = {};
+
+    // Build productMap from global script products (already defined in script.js)
+    const allProducts = [
+        // Example structure: ensure this matches your actual product objects from script.js
+         {
+        id: 1,
+        name: 'Chocolate cookies',
+        price: 450,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Our star performer - always gets the biggest laughs!',
+        ingredients: 'Premium chocolate chips, butter, flour, sugar, vanilla extract',
+        allergens: 'Contains dairy, wheat, and soy'
+    },
+    {
+        id: 2,
+        name: 'Dry fruit cookies',
+        price: 400,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Crunchy, nutty, and full of surprises!',
+        ingredients: 'Peanut butter, peanuts, flour, sugar, eggs',
+        allergens: 'Contains peanuts, wheat, and eggs'
+    },
+    {
+        id: 3,
+        name: 'Almond cookies',
+        price: 400,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    }
+    ,
+    {
+        id: 4,
+        name: 'Coffee cookies',
+        price: 300,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    }
+    ,
+    {
+        id: 5,
+        name: 'Fresh fruit butter cookies',
+        price: 450,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    }
+    ,
+    {
+        id: 6,
+        name: 'Nuts cookies',
+        price: 450,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    }
+    ,
+    {
+        id: 7,
+        name: 'Oats cookies',
+        price: 450,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    }
+    ,
+    {
+        id: 8,
+        name: 'Ice cream cookies',
+        price: 450,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+//Brownies
+    {
+        id: 9,
+        name: 'Chese cake brownie',
+        price: 200,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+        
+    },
+    {
+        id: 10,
+        name: 'Triple chocolate brownie',
+        price: 200,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    {
+        id: 11,
+        name: 'Oreo brownie',
+        price: 200,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    {
+        id: 12,
+        name: 'Waffer brownie',
+        price: 200,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    {
+        id: 13,
+        name: 'Oats brownie',
+        price: 200,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    {
+        id: 14,
+        name: 'Nuts brownie',
+        price: 200,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    {
+        id: 15,
+        name: 'Butterscotch brownie',
+       price: 200,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    {
+        id: 16,
+        name: 'Biscof brownie',
+       price: 200,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    {
+        id: 17,
+        name: 'Honey chocolate brownie',
+        price: 200,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    {
+        id: 18,
+        name: 'desicated Coconut with white chocolate brownie',
+       price: 200,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    //ice-cupcake
+    { 
+     id: 19,
+        name: 'Blueberry ice-cupcake',
+       price: 280,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    { 
+     id: 20,
+        name: 'Strawberry ice-cupcake',
+       price: 280,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    { 
+     id: 21,
+        name: 'Mulberry ice-cupcake',
+       price: 280,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    { 
+     id: 22,
+        name: 'Fresh fruit ice-cupcake',
+       price: 280,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    //popcorn
+    { 
+     id: 23,
+        name:'Cheddar chese popcorn',
+       price: 180,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    { 
+     id: 24,
+        name: 'Butter-salt popcorn',
+       price: 180,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    },
+    { 
+     id: 25,
+        name: 'carmel popcorn',
+       price: 180,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+        description: 'Never the same cookie twice - that\'s our promise!',
+        ingredients: 'Oats, raisins, cinnamon, flour, butter',
+        allergens: 'Contains wheat and dairy'
+    }
+        // ... other products
+    ];
+
+    allProducts.forEach(p => productMap[p.id] = p);
+
+    const cartItemsContainer = document.getElementById("cart-items");
+    const totalPriceElement = document.getElementById("total-price");
+    let total = 0;
+
+    cart.forEach(item => {
+        const product = productMap[item.id];
+        if (product) {
+            const subtotal = product.price * item.quantity;
+            total += subtotal;
+
+            const itemElement = document.createElement("div");
+            itemElement.classList.add("summary-item");
+            itemElement.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <img src="${product.image}" alt="${product.name}" style="width: 50px; height: 50px; border-radius: 8px;">
+                    <div>
+                        <strong>${product.name}</strong><br>
+                        Qty: ${item.quantity} x ₹${product.price.toFixed(2)}
+                    </div>
+                </div>
+                <div>₹${subtotal.toFixed(2)}</div>
+            `;
+            cartItemsContainer.appendChild(itemElement);
+        }
+    });
+
+    totalPriceElement.textContent = total.toFixed(2);
+});
+  
+  </script>
+</body>
+</html>

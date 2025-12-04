@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies - Stand-Up Cookie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="logo">Timy Mini cookies house 🍪</a>
+            <div class="nav-links">
+                <a href="index.html#products">Products</a>
+                <a href="index.html#story">Our Story</a>
+                <a href="index.html#testimonials">Reviews</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="#cart" class="cart-badge">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Header -->
+    <section class="product-header">
+        <div class="product-header-content">
+            <h1>Premium Cookies</h1>
+            <p>Handcrafted with love and a dash of humor</p>
+            <div class="product-header-stats">
+                <div class="stat">
+                    <i class="fas fa-star"></i>
+                    <span>4.9/5 Rating</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-users"></i>
+                    <span>1000+ Happy Customers</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-truck"></i>
+                    <span>Free Shipping</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="product-page">
+        <div class="product-container">
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">All Cookies</button>
+                <button class="filter-btn" data-filter="best-seller">Best Sellers</button>
+                <button class="filter-btn" data-filter="gluten-free">Gluten Free</button>
+                <button class="filter-btn" data-filter="new">New Arrivals</button>
+            </div>
+            <div class="product-grid">
+                <div class="product-card" data-category="best-seller">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Chocolate Chip Comedian" class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary quick-view" data-product="chocolate-chip">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-tags">
+                            <span class="product-tag best-seller">Best Seller</span>
+                            <span class="product-weight">100g</span>
+                        </div>
+                        <h3>Chocolate cookies</h3>
+                        <p>Our star performer - always gets the biggest laughs! Rich chocolate chips in a perfectly balanced cookie.</p>
+                        <div class="product-meta">
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(120)</span>
+                            </div>
+                            <p class="price">₹450</p>
+                        </div>
+                        <button class="btn btn-primary add-to-cart" data-id="1">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="gluten-free">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Peanut Butter Punchline" class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary quick-view" data-product="peanut-butter">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-tags">
+                            <span class="product-tag gluten-free">Gluten Free</span>
+                            <span class="product-weight">100g</span>
+                        </div>
+                        <h3>Dry fruit cookies</h3>
+                        <p>Crunchy, nutty, and full of surprises! A gluten-free delight that will make you smile.</p>
+                        <div class="product-meta">
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(85)</span>
+                            </div>
+                            <p class="price">₹400</p>
+                        </div>
+                        <button class="btn btn-primary add-to-cart" data-id="2">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="gluten-free">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Peanut Butter Punchline" class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary quick-view" data-product="peanut-butter">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-tags">
+                            <span class="product-tag gluten-free">Gluten Free</span>
+                            <span class="product-weight">100g</span>
+                        </div>
+                        <h3>Almond cookies</h3>
+                        <p>Crunchy, nutty, and full of surprises! A gluten-free delight that will make you smile.</p>
+                        <div class="product-meta">
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(85)</span>
+                            </div>
+                            <p class="price">₹400</p>
+                        </div>
+                        <button class="btn btn-primary add-to-cart" data-id="3">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="gluten-free">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Peanut Butter Punchline" class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary quick-view" data-product="peanut-butter">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-tags">
+                            <span class="product-tag gluten-free">Gluten Free</span>
+                            <span class="product-weight">100g</span>
+                        </div>
+                        <h3>Coffee cookies</h3>
+                        <p>Crunchy, nutty, and full of surprises! A gluten-free delight that will make you smile.</p>
+                        <div class="product-meta">
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(85)</span>
+                            </div>
+                            <p class="price">₹300</p>
+                        </div>
+                        <button class="btn btn-primary add-to-cart" data-id="4">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="gluten-free">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Peanut Butter Punchline" class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary quick-view" data-product="peanut-butter">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-tags">
+                            <span class="product-tag gluten-free">Gluten Free</span>
+                            <span class="product-weight">100g</span>
+                        </div>
+                        <h3>Fresh fruit butter cookies</h3>
+                        <p>Crunchy, nutty, and full of surprises! A gluten-free delight that will make you smile.</p>
+                        <div class="product-meta">
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(85)</span>
+                            </div>
+                            <p class="price">₹450</p>
+                        </div>
+                        <button class="btn btn-primary add-to-cart" data-id="5">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="gluten-free">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Peanut Butter Punchline" class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary quick-view" data-product="peanut-butter">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-tags">
+                            <span class="product-tag gluten-free">Gluten Free</span>
+                            <span class="product-weight">100g</span>
+                        </div>
+                        <h3>Nuts cookies</h3>
+                        <p>Crunchy, nutty, and full of surprises! A gluten-free delight that will make you smile.</p>
+                        <div class="product-meta">
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(85)</span>
+                            </div>
+                            <p class="price">₹450</p>
+                        </div>
+                        <button class="btn btn-primary add-to-cart" data-id="6">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="gluten-free">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Peanut Butter Punchline" class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary quick-view" data-product="peanut-butter">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-tags">
+                            <span class="product-tag gluten-free">Gluten Free</span>
+                            <span class="product-weight">100g</span>
+                        </div>
+                        <h3>Oats cookies</h3>
+                        <p>Crunchy, nutty, and full of surprises! A gluten-free delight that will make you smile.</p>
+                        <div class="product-meta">
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(85)</span>
+                            </div>
+                            <p class="price">₹450</p>
+                        </div>
+                        <button class="btn btn-primary add-to-cart" data-id="7">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="gluten-free">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Peanut Butter Punchline" class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary quick-view" data-product="peanut-butter">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-tags">
+                            <span class="product-tag gluten-free">Gluten Free</span>
+                            <span class="product-weight">100g</span>
+                        </div>
+                <h3>Ice cream cookies</h3>
+                        <p>Crunchy, nutty, and full of surprises! A gluten-free delight that will make you smile.</p>
+                        <div class="product-meta">
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(85)</span>
+                            </div>
+                            <p class="price">₹450</p>
+                        </div>
+                        <button class="btn btn-primary add-to-cart" data-id="8">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Features -->
+    <section class="product-features">
+        <div class="feature">
+            <i class="fas fa-heart"></i>
+            <h3>Made with Love</h3>
+            <p>Each cookie is handcrafted with premium ingredients and a whole lot of love.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-leaf"></i>
+            <h3>Natural Ingredients</h3>
+            <p>We use only the finest natural ingredients, sourced locally when possible.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-truck"></i>
+            <h3>Fast Delivery</h3>
+            <p>Free shipping on orders over $50, delivered fresh to your doorstep.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Quality Guarantee</h3>
+            <p>100% satisfaction guaranteed or your money back.</p>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <h2>You Might Also Like</h2>
+        <div class="related-products-grid">
+            <a href="brownies.html" class="related-product-card">
+                <div class="related-product-image">
+                    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Brownies">
+                </div>
+                <div class="related-product-info">
+                    <h3>Brownies</h3>
+                    <p>Rich, fudgy brownies that will make your taste buds dance with joy.</p>
+                    <span class="btn btn-secondary">View Collection</span>
+                </div>
+            </a>
+            <a href="popcorn.html" class="related-product-card">
+                <div class="related-product-image">
+                    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Flavored Popcorn">
+                </div>
+                <div class="related-product-info">
+                    <h3>Flavored Popcorn</h3>
+                    <p>Crunchy, flavorful popcorn with unique combinations that will surprise and delight.</p>
+                    <span class="btn btn-secondary">View Collection</span>
+                </div>
+            </a>
+            <a href="ice-cupcakes.html" class="related-product-card">
+                <div class="related-product-image">
+                    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Ice Cupcakes">
+                </div>
+                <div class="related-product-info">
+                    <h3>Ice Cupcakes</h3>
+                    <p>Cool, creamy cupcakes that are perfect for any occasion.</p>
+                    <span class="btn btn-secondary">View Collection</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
